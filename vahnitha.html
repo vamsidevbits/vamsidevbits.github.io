@@ -470,7 +470,11 @@ function saveState(){
 (async function init() {
   await loadDefaults();
   state = loadState();
-  if(state) renderAll();
+  if(state) {
+    renderAll();
+    // Signal to Puppeteer that data is loaded and rendered
+    document.body.setAttribute('data-ready', 'true');
+  }
 })();
 </script>
 
