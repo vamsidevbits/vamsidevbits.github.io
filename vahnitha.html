@@ -293,14 +293,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
     display: table !important;
     width: 100% !important;
     border-collapse: collapse !important;
+    min-height: 297mm !important;
   }
   
-  /* Sidebar with exact dimensions */
+  /* Sidebar with exact dimensions - fills full height */
   .r-sidebar {
     display: table-cell !important;
     width: 220px !important;
     vertical-align: top !important;
     background: var(--navy) !important;
+    height: 100% !important;
   }
   
   /* Main content fills remaining space */
@@ -378,14 +380,29 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
   
   /* Force desktop width on all mobile browsers */
   @media (max-width: 600px) {
+    * {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
     body {
       width: 210mm !important;
       min-width: 210mm !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
     
     .wrap {
       width: 210mm !important;
       min-width: 210mm !important;
+      max-width: 210mm !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    
+    .doc-wrap {
+      margin: 0 !important;
+      padding: 0 !important;
     }
     
     .r-sidebar {
@@ -396,6 +413,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
     .resume-layout {
       display: table !important;
       width: 100% !important;
+      margin: 0 !important;
     }
   }
 }
