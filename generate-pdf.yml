@@ -1,0 +1,62 @@
+name: Generate PDF Resume
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  generate-pdf:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@latest
+      
+    - name: Generate Resume PDF
+      run: |
+        chrome --headless --disable-gpu --print-to-pdf=Vahnitha_Kanuri_Resume.pdf --print-to-pdf-no-header --no-margins "file://${PWD}/index.html"
+        
+    - name: Generate Cover Letter PDF
+      run: |
+        # Create a temporary HTML that loads the cover letter tab
+        cat > temp_coverletter.html << 'EOF'
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <meta charset="UTF-8">
+          <script>
+            window.onload = function() {
+              const iframe = document.createElement('iframe');
+              iframe.src = 'index.html';
+              iframe.style.width = '210mm';
+              iframe.style.height = '297mm';
+              iframe.style.border = 'none';
+              document.body.appendChild(iframe);
+              
+              iframe.onload = function() {
+                setTimeout(() => {
+                  const doc = iframe.contentDocument || iframe.contentWindow.document;
+                  doc.querySelector('.tab:nth-child(2)').click();
+                  setTimeout(() => window.print(), 500);
+                }, 1000);
+              };
+            };
+          </script>
+        </head>
+        <body style="margin:0;padding:0;"></body>
+        </html>
+        EOF
+        chrome --headless --disable-gpu --print-to-pdf=Vahnitha_Kanuri_CoverLetter.pdf --print-to-pdf-no-header --no-margins "file://${PWD}/temp_coverletter.html"
+        rm temp_coverletter.html
+        
+    - name: Commit PDFs
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add *.pdf
+        git diff --staged --quiet || git commit -m "Auto-generate PDFs [skip ci]"
+        git push
