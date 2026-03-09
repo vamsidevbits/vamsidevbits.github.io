@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vahnitha Kanuri — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script>
+/* ============================================================
+   RESUME DATA — Edit everything here, the page updates itself
+   ============================================================ */
+const RESUME = {
+  name: "Vahnitha Kanuri",
+  tagline: "Logistics Coordinator · Supply Chain · Warehouse Operations",
+  contact: {
+    location: "Melbourne, VIC, Australia",
+    email: "vahnithakanuri98@gmail.com",
+    phone: "0422 245 365",
+    linkedin: "linkedin.com/in/vahnitha-kanuri"
+  },
+  sidebar: {
+    location: { city: "Melbourne, VIC", country: "Australia" },
+    targetRoles: [
+      "Logistics Coordinator",
+      "Supply Chain Analyst",
+      "Freight Operations Coordinator",
+      "Warehouse Supervisor",
+      "Operations Supervisor"
+    ],
+    skills: ["WMS", "RF Scanners", "ERP Systems", "MS Office", "Freight Systems", "Automated WH"],
+    certifications: [
+      "Dangerous Goods Awareness",
+      "Air Cargo Security Awareness",
+      "RACA Security Training",
+      "First Aid & CPR"
+    ],
+    education: [
+      { degree: "M. Supply Chain & Logistics", school: "RMIT University", year: "2026" },
+      { degree: "M. Human Resource Management", school: "", year: "" },
+      { degree: "B. Business Administration", school: "", year: "" }
+    ],
+    availability: "Immediate · Full-time\nOpen to shift work"
+  },
+  summary: "Logistics & Supply Chain professional with proven experience supervising 25+ staff at Maersk's 80% automated distribution centre across picking, dispatch and decanting operations. Acted as Shift Manager for 6 months, coordinating freight documentation, container bookings and transport provider liaison. Master of Supply Chain & Logistics Management (RMIT, 2026) combined with Dangerous Goods, Air Cargo Security and RACA certifications. Committed to operational excellence, inventory accuracy and on-time fulfilment.",
+  competencies: [
+    "Logistics Coordination",       "Supply Chain Operations",      "Warehouse Management (WMS)",
+    "Inventory Management",         "Dispatch & Container Ops",     "Freight Documentation",
+    "Transport / 3PL Coordination", "Automated Warehouse Systems",  "RF Scanner Operations",
+    "Team Leadership (25+ Staff)",  "Process Improvement",          "WHS Safety Compliance"
+  ],
+  experience: [
+    {
+      title: "Team Leader / Acting Shift Manager",
+      company: "Maersk (formerly Li & Fung Logistics)",
+      location: "Melbourne, VIC",
+      dates: "2022 – 2024",
+      bullets: [
+        "Managed end-to-end warehouse operations in an 80% automated distribution centre across picking, dispatch and decanting departments.",
+        "Supervised, coached and performance-managed a team of 25 warehouse staff to meet daily throughput and accuracy KPIs.",
+        "Acted as Shift Manager for 6 months, assuming full responsibility for shift-wide logistics coordination and operational performance.",
+        "Coordinated container bookings, shipping documentation and freight compliance; liaised with transport providers and 3PL freight partners.",
+        "Operated WMS and RF scanners to maintain real-time inventory visibility and order fulfilment accuracy.",
+        "Managed dispatch coordination and container closure, ensuring on-time, accurate shipment of orders.",
+        "Maintained WHS safety compliance across automated warehouse operations, proactively reducing incident risk.",
+        "Identified and implemented process improvements to streamline logistics workflow and boost operational efficiency."
+      ]
+    },
+    {
+      title: "Workforce Manager & Unit Supervisor",
+      company: "RSSS Garden Services",
+      location: "India",
+      dates: "Prior to 2022",
+      bullets: [
+        "Managed workforce scheduling and resource allocation for operational service teams.",
+        "Supervised staff productivity, operational workflow and multi-unit service delivery."
+      ]
+    }
+  ],
+  internships: [
+    {
+      title: "HR Intern · Steel Plant",
+      bullets: ["Assisted with workforce coordination, employee documentation and operational workforce planning."]
+    },
+    {
+      title: "HR & Administration Intern · Sparkles Laundry Services (Central Railways Contractor)",
+      bullets: ["Supported workforce coordination, production scheduling, service operations and administrative records."]
+    }
+  ]
+};
+/* ============================================================ */
+</script>
+<style>
+  :root { --navy:#1B3A6B; --teal:#0D7377; --teal-light:#14BDBD; --accent:#F5A623; --gray:#555; --light:#F4F6FA; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  /* MOBILE INSTRUCTION BANNER */
+  .mobile-banner {
+    display: none;
+    background: #1B3A6B;
+    color: white;
+    padding: 16px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    text-align: center;
+  }
+  .mobile-banner .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 10px;
+    text-align: left;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobile-banner .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 10px 14px;
+  }
+  .mobile-banner .step-num {
+    background: #14BDBD;
+    color: white;
+    font-weight: 700;
+    font-size: 13px;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .mobile-banner .step-text { font-size: 14px; color: rgba(255,255,255,0.92); }
+  .mobile-banner .step-text strong { color: white; }
+  .mobile-banner-title { font-size: 16px; font-weight: 700; color: #14BDBD; letter-spacing: 0.5px; }
+
+  /* Show banner only on mobile */
+  @media (max-width: 768px) {
+    .mobile-banner { display: block; }
+    .desktop-btn { display: none !important; }
+  }
+
+  body { font-family:'DM Sans',sans-serif; background:#E8EDF5; display:flex; flex-direction:column; align-items:center; padding:40px 20px; }
+  @media (max-width: 768px) { body { padding: 0; } }
+
+  .page { width:210mm; max-width:820px; background:white; box-shadow:0 20px 80px rgba(0,0,0,0.18); }
+  @media (max-width: 768px) { .page { width: 100%; max-width: 100%; box-shadow: none; } }
+
+  .layout { display:grid; grid-template-columns:240px 1fr; }
+  @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
+
+  .sidebar { background:var(--navy); position:relative; overflow:hidden; }
+  .sidebar::before { content:''; position:absolute; top:-60px; right:-60px; width:180px; height:180px; border-radius:50%; background:rgba(255,255,255,0.05); }
+  .sidebar::after { content:''; position:absolute; bottom:80px; left:-40px; width:130px; height:130px; border-radius:50%; background:rgba(13,115,119,0.3); }
+  .sidebar-inner { padding:34px 24px; position:relative; z-index:1; }
+  .avatar-ring { width:96px; height:96px; border-radius:50%; background:linear-gradient(135deg,var(--teal-light),var(--teal)); display:flex; align-items:center; justify-content:center; margin:0 auto 22px; font-family:'DM Serif Display',serif; font-size:38px; color:white; box-shadow:0 0 0 4px rgba(255,255,255,0.15); }
+  .sb-section { margin-bottom:22px; }
+  .sb-label { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--teal-light); margin-bottom:10px; padding-bottom:6px; border-bottom:1px solid rgba(255,255,255,0.12); }
+  .sb-text { font-size:13px; color:rgba(255,255,255,0.85); line-height:1.7; }
+  .sb-text strong { color:white; font-weight:600; }
+  .skill-tag { display:inline-block; background:rgba(13,115,119,0.35); color:rgba(255,255,255,0.92); font-size:11.5px; padding:4px 9px; border-radius:3px; margin:2px; border:1px solid rgba(13,115,119,0.6); font-weight:500; }
+  .cert-item { display:flex; align-items:flex-start; gap:8px; margin-bottom:9px; }
+  .cert-dot { width:6px; height:6px; border-radius:50%; background:var(--teal-light); margin-top:6px; flex-shrink:0; }
+
+  .header-bar { background:var(--navy); padding:26px 28px 20px; position:relative; overflow:hidden; }
+  .header-bar::after { content:''; position:absolute; bottom:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--teal),var(--teal-light),var(--accent)); }
+  .name { font-family:'DM Serif Display',serif; font-size:38px; color:white; line-height:1; }
+  .title-line { font-size:13px; color:var(--teal-light); font-weight:600; letter-spacing:1.5px; text-transform:uppercase; margin-top:8px; }
+  .contact-row { display:flex; gap:12px; margin-top:10px; flex-wrap:wrap; }
+  .contact-item { font-size:12px; color:rgba(255,255,255,0.75); display:flex; align-items:center; gap:4px; }
+
+  .main-content { padding:20px 26px 26px; }
+  .section { margin-bottom:18px; }
+  .sec-header { display:flex; align-items:center; gap:10px; margin-bottom:11px; }
+  .sec-title { font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:var(--navy); white-space:nowrap; }
+  .sec-line { flex:1; height:2px; background:linear-gradient(90deg,var(--teal),transparent); }
+  .summary-text { font-size:13.5px; line-height:1.72; color:var(--gray); }
+  .competencies { display:grid; grid-template-columns:repeat(3,1fr); gap:6px; }
+  @media (max-width: 768px) { .competencies { grid-template-columns: repeat(2,1fr); } }
+  .comp-item { background:var(--light); border-left:3px solid var(--teal); padding:7px 10px; font-size:12.5px; font-weight:600; color:var(--navy); border-radius:0 3px 3px 0; }
+  .job { margin-bottom:15px; }
+  .job-header { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; }
+  .job-title { font-weight:700; font-size:15px; color:var(--navy); }
+  .job-dates { font-size:12px; color:white; background:var(--teal); padding:3px 10px; border-radius:20px; font-weight:600; }
+  .job-company { font-size:13px; color:var(--teal); font-weight:600; margin:4px 0 7px; }
+  .job-loc { color:var(--gray); font-weight:400; }
+  ul.bullets { list-style:none; padding:0; }
+  ul.bullets li { font-size:13px; color:#444; line-height:1.62; margin-bottom:5px; padding-left:16px; position:relative; }
+  ul.bullets li::before { content:'▸'; color:var(--teal); font-size:11px; position:absolute; left:0; top:2px; }
+  .intern-title { font-weight:700; font-size:13.5px; color:var(--navy); margin-top:10px; margin-bottom:4px; }
+
+  /* Desktop print button */
+  .desktop-btn { position:fixed; bottom:28px; right:28px; background:var(--teal); color:white; border:none; padding:13px 24px; border-radius:30px; font-size:15px; font-weight:600; cursor:pointer; box-shadow:0 4px 20px rgba(13,115,119,0.4); font-family:'DM Sans',sans-serif; z-index:999; }
+  .desktop-btn:hover { background:var(--navy); }
+
+  @media print {
+    body { background:none; padding:0; margin:0; }
+    .page { box-shadow:none; width:100%; max-width:100%; }
+    .desktop-btn, .mobile-banner { display:none !important; }
+    .layout { grid-template-columns: 240px 1fr; }
+    @page { size:A4; margin:0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Mobile instructions banner -->
+<div class="mobile-banner">
+  <div class="mobile-banner-title">📄 Save as PDF on iPhone</div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-text">Tap the <strong>Share button</strong> (box with arrow ↑) at the bottom of Safari</div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-text">Scroll down and tap <strong>"Print"</strong></div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-text"><strong>Pinch outward</strong> on the preview thumbnail to convert to PDF</div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-text">Tap the <strong>Share button</strong> again → <strong>Save to Files</strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- Desktop print button -->
+<button class="desktop-btn" onclick="window.print()">🖨️ Print / Save PDF</button>
+
+<div class="page" id="resume"></div>
+
+<script>
+function initials(name) {
+  return name.split(' ').map(w => w[0]).join('').slice(0,2).toUpperCase();
+}
+
+function render() {
+  const R = RESUME;
+  const C = R.contact;
+  document.title = `${R.name} — Resume`;
+
+  const eduHTML = R.sidebar.education.map(e =>
+    `<strong>${e.degree}</strong>${e.school ? `<br>${e.school}${e.year ? ` · ${e.year}` : ''}` : ''}`
+  ).join('<br><br>');
+
+  const sidebar = `
+    <div class="sidebar"><div class="sidebar-inner">
+      <div class="avatar-ring">${initials(R.name)}</div>
+      <div class="sb-section">
+        <div class="sb-label">Location</div>
+        <div class="sb-text"><strong>${R.sidebar.location.city}</strong><br>${R.sidebar.location.country}</div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">Target Roles</div>
+        <div class="sb-text">${R.sidebar.targetRoles.join('<br>')}</div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">Technical Skills</div>
+        <div>${R.sidebar.skills.map(s => `<span class="skill-tag">${s}</span>`).join('')}</div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">Certifications</div>
+        ${R.sidebar.certifications.map(c => `<div class="cert-item"><div class="cert-dot"></div><div class="sb-text">${c}</div></div>`).join('')}
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">Education</div>
+        <div class="sb-text">${eduHTML}</div>
+      </div>
+      <div class="sb-section">
+        <div class="sb-label">Availability</div>
+        <div class="sb-text">${R.sidebar.availability.replace('\n','<br>')}</div>
+      </div>
+    </div></div>`;
+
+  const contactItems = [
+    { icon:'📍', text: C.location },
+    { icon:'✉️', text: C.email },
+    { icon:'📱', text: C.phone },
+    { icon:'🔗', text: C.linkedin }
+  ];
+
+  const experienceHTML = R.experience.map(job => `
+    <div class="job">
+      <div class="job-header">
+        <div class="job-title">${job.title}</div>
+        <div class="job-dates">${job.dates}</div>
+      </div>
+      <div class="job-company">${job.company} <span class="job-loc">· ${job.location}</span></div>
+      <ul class="bullets">${job.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  const internshipsHTML = R.internships.map(i => `
+    <div class="intern-title">${i.title}</div>
+    <ul class="bullets">${i.bullets.map(b => `<li>${b}</li>`).join('')}</ul>`).join('');
+
+  const main = `
+    <div class="main">
+      <div class="header-bar">
+        <div class="name">${R.name}</div>
+        <div class="title-line">${R.tagline}</div>
+        <div class="contact-row">
+          ${contactItems.map(ci => `<span class="contact-item">${ci.icon} ${ci.text}</span>`).join('')}
+        </div>
+      </div>
+      <div class="main-content">
+        <div class="section">
+          <div class="sec-header"><div class="sec-title">Professional Summary</div><div class="sec-line"></div></div>
+          <p class="summary-text">${R.summary}</p>
+        </div>
+        <div class="section">
+          <div class="sec-header"><div class="sec-title">Core Competencies</div><div class="sec-line"></div></div>
+          <div class="competencies">${R.competencies.map(c => `<div class="comp-item">${c}</div>`).join('')}</div>
+        </div>
+        <div class="section">
+          <div class="sec-header"><div class="sec-title">Professional Experience</div><div class="sec-line"></div></div>
+          ${experienceHTML}${internshipsHTML}
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById('resume').innerHTML = `<div class="layout">${sidebar}${main}</div>`;
+}
+
+render();
+</script>
+</body>
+</html>
