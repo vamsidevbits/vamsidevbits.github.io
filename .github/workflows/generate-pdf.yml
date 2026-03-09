@@ -57,7 +57,12 @@ jobs:
           await page.goto('file://' + process.cwd() + '/index.html', {
             waitUntil: 'networkidle0'
           });
-          await page.click('.tab:nth-child(2)');
+          // Click the Cover Letter tab by finding button with text
+          await page.evaluate(() => {
+            const buttons = Array.from(document.querySelectorAll('.tab'));
+            const coverLetterBtn = buttons.find(btn => btn.textContent.includes('Cover Letter'));
+            if (coverLetterBtn) coverLetterBtn.click();
+          });
           await page.waitForTimeout(500);
           await page.pdf({
             path: 'Vahnitha_Kanuri_CoverLetter.pdf',
