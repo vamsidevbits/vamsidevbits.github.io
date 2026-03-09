@@ -63,7 +63,7 @@ jobs:
             const coverLetterBtn = buttons.find(btn => btn.textContent.includes('Cover Letter'));
             if (coverLetterBtn) coverLetterBtn.click();
           });
-          await page.waitForTimeout(500);
+          await new Promise(resolve => setTimeout(resolve, 500));
           await page.pdf({
             path: 'Vahnitha_Kanuri_CoverLetter.pdf',
             format: 'A4',
