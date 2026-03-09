@@ -37,6 +37,8 @@ jobs:
           await page.goto('file://' + process.cwd() + '/vahnitha.html', {
             waitUntil: 'networkidle0'
           });
+          // Wait for data to load from JSON
+          await page.waitForSelector('body[data-ready="true"]', { timeout: 10000 });
           await page.pdf({
             path: 'Vahnitha_Kanuri_Resume.pdf',
             format: 'A4',
@@ -60,6 +62,8 @@ jobs:
           await page.goto('file://' + process.cwd() + '/vahnitha.html', {
             waitUntil: 'networkidle0'
           });
+          // Wait for data to load from JSON
+          await page.waitForSelector('body[data-ready="true"]', { timeout: 10000 });
           // Click the Cover Letter tab by finding button with text
           await page.evaluate(() => {
             const buttons = Array.from(document.querySelectorAll('.tab'));
