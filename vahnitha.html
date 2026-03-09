@@ -56,7 +56,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
    DOCUMENT STYLES
    (shared between visible + hidden PDF clone)
 ════════════════════════════════════════════ */
-.resume-layout{display:table;width:100%;border-collapse:collapse;}
+.resume-layout{display:table;width:100%;border-collapse:collapse;min-height:100vh;}
 .r-sidebar{
   display:table-cell;width:200px;vertical-align:top;
   background:var(--navy);position:relative;overflow:hidden;
@@ -370,26 +370,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
   }
   
   /* MOBILE PRINT - Force desktop layout on mobile */
-  @supports (-webkit-touch-callout: none) {
-    /* iOS Safari */
-    body {
-      width: 210mm !important;
-      transform-origin: top left;
-    }
-  }
-  
-  /* Force desktop width on all mobile browsers */
   @media (max-width: 600px) {
-    * {
-      margin: 0 !important;
-      padding: 0 !important;
+    @page {
+      size: A4 portrait;
+      margin: 0;
     }
     
-    body {
+    html, body {
       width: 210mm !important;
       min-width: 210mm !important;
+      max-width: 210mm !important;
       margin: 0 !important;
       padding: 0 !important;
+      overflow-x: visible !important;
     }
     
     .wrap {
@@ -401,6 +394,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);min-height:100vh;}
     }
     
     .doc-wrap {
+      width: 210mm !important;
       margin: 0 !important;
       padding: 0 !important;
     }
