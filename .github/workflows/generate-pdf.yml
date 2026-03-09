@@ -34,7 +34,7 @@ jobs:
             args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage']
           });
           const page = await browser.newPage();
-          await page.goto('file://' + process.cwd() + '/index.html', {
+          await page.goto('file://' + process.cwd() + '/vahnitha.html', {
             waitUntil: 'networkidle0'
           });
           await page.pdf({
